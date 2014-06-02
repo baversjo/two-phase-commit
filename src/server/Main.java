@@ -10,7 +10,8 @@ import shared.Log;
 
 public class Main {
 	public static int LISTEN_PORT = 5476;
-	public static int TIMEOUT = 5000;
+	public static int TIMEOUT = 10000;
+	public static int SLEEP_TIME = 10000;
 	
 	public static void main(String[] args) {
 		Map<Socket, Participant > connections = new ConcurrentHashMap<>();

@@ -22,7 +22,9 @@ public class Participant {
 	}
 	public void startParticipating(){
 		try {
-			socket.setSoTimeout(server.Main.TIMEOUT);
+			Thread.sleep(Main.SLEEP_TIME);
+			
+			socket.setSoTimeout(Main.TIMEOUT);
 			Message o = receive();
 			
 			if(o.type.equals("VOTE_REQUEST")){
@@ -64,6 +66,9 @@ public class Participant {
 		}catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
 		}
 	}
 	

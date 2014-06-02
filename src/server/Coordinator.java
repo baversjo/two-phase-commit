@@ -3,6 +3,7 @@ package server;
 import java.net.Socket;
 import java.util.Map;
 
+import client.Main;
 import shared.FakeResource;
 import shared.Log;
 import shared.Message;
@@ -23,7 +24,13 @@ public class Coordinator {
 		voteCounter = 0;
 		log.write(Log.START_2PC);
 		Message voteRequestMessage = new Message("VOTE_REQUEST");
-
+		
+		try {
+			Thread.sleep(Main.SLEEP_TIME);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		for(Participant p: connections.values()){
 			p.sendMessage(voteRequestMessage, new ResponseEvent() { 
