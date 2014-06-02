@@ -42,6 +42,7 @@ public class ListenThread implements Runnable{
 					Participant participant = new Participant(newClient, connections);
 					connections.put(newClient, participant);
 					System.out.println("connected");
+				}catch(SocketTimeoutException e){
 				}catch(IOException e){
 					System.out.println("Could not accept client connection");
 				}

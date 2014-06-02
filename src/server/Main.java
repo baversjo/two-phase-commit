@@ -19,7 +19,9 @@ public class Main {
 		FakeResource fr = new FakeResource();
 		
 		ListenThread lt = new ListenThread(LISTEN_PORT, connections);
+		new Thread(lt).start();
 		Coordinator coordinator = new Coordinator(log, fr, connections);
+		
 		
 		Scanner sc = new Scanner(System.in);
 		while(true){

@@ -107,7 +107,7 @@ public class Participant{
 		
 		ResponseEvent e = awaitingResponse;
 		
-		System.out.println("Received " + o.getClass().getName());
+		System.out.println("Received " + o.type);
 		
 		
 		awaitingResponse = null;
